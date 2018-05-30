@@ -1,0 +1,8 @@
+# run update
+> liquibaseUpdate
+# copy changelog-master-updated.xml to changelog-master.xml
+$ copy-file src/main/database/changelog-master-updated.xml src/main/database/changelog-master.xml
+# run status
+> liquibaseStatus
+# Check that the status has one change set un-applied
+> check

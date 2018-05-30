@@ -1,0 +1,6 @@
+# run update
+> liquibaseUpdate
+# copy changelog-1.0-changed.xml to changelog-1.0.xml
+$ copy-file src/main/database/changelog-1.0-changed.xml src/main/database/changelog-1.0.xml
+# run liquibaseValidateChangelog but expects it to fail
+-> liquibaseValidateChangelog

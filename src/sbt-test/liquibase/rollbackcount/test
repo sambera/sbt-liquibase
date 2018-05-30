@@ -1,0 +1,12 @@
+# run update
+> liquibaseUpdate
+# check if update ran
+> checkTableExist
+# run RollbackCount 1
+> liquibaseRollbackCount 1
+# chek if table has been drop
+> checkTableAddressIsDrop
+# run RollbackCount 1 again
+> liquibaseRollbackCount 1
+# chek if table has been drop
+> checkTablePersonIsDrop
