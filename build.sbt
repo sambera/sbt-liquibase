@@ -13,8 +13,6 @@ val liquibaseCore = "org.liquibase" % "liquibase-core" % "3.6.1"
 
 libraryDependencies += liquibaseCore
 
-publishTo := Some(Resolver.file("sambera.se", file(Path.userHome + "/Projects/BigToast/bigtoast.github.com/repo")))
-
 scriptedLaunchOpts := { scriptedLaunchOpts.value ++
   Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
 }
