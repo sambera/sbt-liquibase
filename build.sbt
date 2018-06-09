@@ -19,9 +19,12 @@ scriptedLaunchOpts := { scriptedLaunchOpts.value ++
 scriptedBufferLog := false
 
 // Create a folder in 'Path.userHome.absolutePath + /<local_git_repository>'.
-// This will publish the plugin to a local repository (local git-repository)
-// Commit and push to the remote git repository.
-// ##### Adds plugin and sambera-release resolver in 'project/plugins.sbt'
-// ##### resolvers += Resolver.url("<organization>-releases", url("https://github.com/<remote_git_repository>/releases/tree/master"))
-// ##### addSbtPlugin("se.sambera" % "sbt-liquibase" % "0.1.0")
+// The 'sbt publish' command will publish the plugin to a local repository (local git-repository)
 publishTo := Some(Resolver.file("sambera.se", new File(Path.userHome.absolutePath + "/repo/sambera-releases/releases")))
+// Commit and push to the remote git repository, e.g. https://github.com/<organization>/releases.
+// To Use this plugin:
+// ##### Adds plugin and resolver in 'project/plugins.sbt'
+// ##### e.g.
+// ##### resolvers += "<organization>-github" at "https://raw.githubusercontent.com/<organization>/releases/master/"
+// ##### addSbtPlugin("<organization>" % "<name>" % "<version>")
+// ##### See README as an example

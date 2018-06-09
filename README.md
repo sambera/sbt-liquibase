@@ -11,7 +11,7 @@ Plugin that applies database changes using Liquibase.
 Add the following to your `project/plugins.sbt`:
 
     // Adds sambera-release resolver
-    resolvers += Resolver.url("sambera-releases", url("https://github.com/sambera/releases/tree/master"))
+    resolvers += "sambera-github" at "https://raw.githubusercontent.com/sambera/releases/master/"
 
     // Enable liquibase updates
     addSbtPlugin("se.sambera" % "sbt-liquibase" % "0.1.0")
