@@ -67,7 +67,7 @@ object LiquibasePlugin extends AutoPlugin {
         Def.taskDyn {
           val classpath = (dependencyClasspath in conf).value
           Def.task {
-            val accessor = new ClassLoaderResourceAccessor(sbt.internal.inc.classpath.ClasspathUtilities.toLoader(classpath.map(_.data)))
+            val accessor = new ClassLoaderResourceAccessor(ClassLoader.getClassLoader(classpath))
             CommandLineUtils.createDatabaseObject(
               accessor,
               liquibaseUrl.value,
