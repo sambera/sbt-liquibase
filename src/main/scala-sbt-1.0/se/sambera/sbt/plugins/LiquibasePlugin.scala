@@ -7,7 +7,7 @@ import liquibase.integration.commandline.CommandLineUtils
 import liquibase.resource.{ClassLoaderResourceAccessor, FileSystemResourceAccessor}
 import sbt.Keys.dependencyClasspath
 import sbt.complete.DefaultParsers.{IntBasic, Space, token}
-import sbt.{Configuration, _}
+import sbt.{Configuration, Def, _}
 import se.sambera.utils.FileConsoleOutputStreamWriter
 
 object LiquibasePlugin extends AutoPlugin {
@@ -43,14 +43,14 @@ object LiquibasePlugin extends AutoPlugin {
 
   import Import._
 
-  val autoImport = Import
+  val autoImport: Import.type = Import
 
   override def requires = sbt.plugins.JvmPlugin
   // This plugin is automatically enabled for projects which are JvmPlugin.
   override def trigger = allRequirements
 
   // a group of settings that are automatically added to projects.
-  override val projectSettings =  inConfig(Compile)(liquibaseBaseSettings(Compile)) ++ inConfig(Test)(liquibaseBaseSettings(Test))
+  override val projectSettings: Seq[Def.Setting[_]] =  inConfig(Compile)(liquibaseBaseSettings(Compile)) ++ inConfig(Test)(liquibaseBaseSettings(Test))
 
   def liquibaseBaseSettings(conf: Configuration) : Seq[Setting[_]] = {
 
