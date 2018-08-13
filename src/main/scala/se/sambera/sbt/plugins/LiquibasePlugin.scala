@@ -1,4 +1,3 @@
-
 package se.sambera.sbt.plugins
 
 import liquibase.Liquibase
@@ -88,7 +87,6 @@ object LiquibasePlugin extends AutoPlugin {
             )
           }
         }.value,
-
 
       liquibaseInstance := {
         new Liquibase(liquibaseChangelog.value, new FileSystemResourceAccessor, database.value)

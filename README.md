@@ -64,6 +64,12 @@ Add the following to your 'build.sbt' ( if you are using build.sbt )
 |`liquibaseDropAll`|Drop all tables|
 |`liquibaseRollbackCount {int}`|Rolls back the last {int i} change sets applied to the database|
 
+# Developer guide
+
+## Run tests
+The tests are written with sbt-scripted. In order to run them, run `sbt scripted`.
+
+
 Notes
 ------------------
 We have been using bigtoast/'sbt-liquibase' for a while but no updates has been done for the last five years (last commit 23/12/2013).
@@ -71,9 +77,8 @@ We have been using bigtoast/'sbt-liquibase' for a while but no updates has been 
 We needed a liquibase-plugin that support the latest sbt version so we use 'bigtoast' and 'sbtliquibase' as a source
 of inspiration to create this plugin.
 
-
-Acknoledgements
----------------
+Acknowledgements
+----------------
 I used the following plugins as reference
 
  * bigtoast/sbt-liquibase (https://github.com/bigtoast/sbt-liquibase)

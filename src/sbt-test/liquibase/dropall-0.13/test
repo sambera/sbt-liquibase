@@ -1,0 +1,8 @@
+# run update
+> liquibaseUpdate
+# check if update ran
+> checkTableExist
+# Drop tables
+> liquibaseDropAll
+# chek if tables are drop
+> checkTablesAreDrop
