@@ -53,6 +53,8 @@ object LiquibasePlugin extends AutoPlugin {
 
   def liquibaseBaseSettings(conf: Configuration) : Seq[Setting[_]] = {
 
+
+
     Seq[Setting[_]](
       liquibaseDefaultCatalog := None,
       liquibaseChangelogCatalog := None,
