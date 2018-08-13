@@ -3,7 +3,7 @@ Liquibase plugin for sbt 1.1.5
 Plugin that applies database changes using Liquibase.
 
 # Latest version
-2018-05-30  version 0.1.0
+2018-08-13  version 1.0.0
 
 # Instructions for use:
 ### Step 1: Include the plugin in your build
@@ -16,12 +16,9 @@ Add the following to your `project/plugins.sbt`:
     // Enable liquibase updates
     addSbtPlugin("se.sambera" % "sbt-liquibase" % "0.1.0")
 
-
 ### Step 2: Activate sbt-liquibase in your build
 
-Add the following to your 'build.sbt' ( if you are using build.sbt )
-
-
+Add the following to your `build.sbt` (if using SBT)
     
     import se.sambera.LiquibasePlugin
     
@@ -37,14 +34,13 @@ Add the following to your 'build.sbt' ( if you are using build.sbt )
          // rest of your setting configuration
          )
 
-
 ## Settings
 
 |Setting|Description|Example|
 |-------|-----------|-------|
 |liquibaseUsername|Username for the database. This defaults to blank. Required.|`samberauser`|
 |liquibasePassword|Password for the database. This defaults to blank. Required.|`secretpassword123`|
-|liqubaseDriver|Database driver classname. There is no default. Required.|`com.mysql.jdbc.Driver`|
+|liquibaseDriver|Database driver classname. There is no default. Required.|`com.mysql.jdbc.Driver`|
 |liquibaseUrl|Database connection uri. There is no default. Required.|`jdbc:mysql://localhost:3306/mydb`|
 |liquibaseChangelog|Full path to your changelog file. This defaults to blank. Required.|`src/main/database/changelog-master.xml"`|
 |liquibaseChangelogCatalog|Default catalog name for the changelog tables. This defaults to None. Optional.|`Some("my_catalog")`|
@@ -67,20 +63,37 @@ Add the following to your 'build.sbt' ( if you are using build.sbt )
 # Developer guide
 
 ## Run tests
-The tests are written with sbt-scripted. In order to run them, run `sbt scripted`.
+The tests are written with sbt-scripted. In order to run them, run `sbt ^ scripted`.
 
+## Release
+The releases are stored in a separate GitHub repository called [releases](https://github.com/sambera/releases). Hence we will call the current repository for plugin repository.
+
+### Clone release repository from GitHub
+- `mkdir -p ~/repo/sambera-releases/`
+- `cd ~/repo/sambera-releases/`
+- `git clone git@github.com:sambera/releases.git`
+
+### Perform release in plugin repository
+- Change release version in `build.sbt`
+- `git commit`
+- `sbt ^ publish` (The ceiling is due to cross compiling for SBT 0.13.+ and 1.+)
+- `git push`
+
+### Publish jar-files from release repository to GitHub 
+- `cd ~/repo/sambera-releases/`
+- `git commit`
+- `git push`
 
 Notes
 ------------------
-We have been using bigtoast/'sbt-liquibase' for a while but no updates has been done for the last five years (last commit 23/12/2013).
+We have been using *bigtoast/sbt-liquibase* for a while but no updates has been done for the last five years (last commit 23/12/2013).
 
-We needed a liquibase-plugin that support the latest sbt version so we use 'bigtoast' and 'sbtliquibase' as a source
+We needed a liquibase-plugin that support the latest sbt version so we use *bigtoast* and *sbtliquibase* as a source
 of inspiration to create this plugin.
 
 Acknowledgements
 ----------------
-I used the following plugins as reference
-
- * bigtoast/sbt-liquibase (https://github.com/bigtoast/sbt-liquibase)
- * sbtliquibase/sbt-liquibase-plugin (https://github.com/sbtliquibase/sbt-liquibase-plugin)
+I used the following plugins as reference:
+ * [bigtoast/sbt-liquibase](https://github.com/bigtoast/sbt-liquibase)
+ * [sbtliquibase/sbt-liquibase-plugin](https://github.com/sbtliquibase/sbt-liquibase-plugin)
 
