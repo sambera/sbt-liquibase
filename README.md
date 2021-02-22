@@ -3,7 +3,7 @@ Liquibase plugin for sbt 1.1.5
 Plugin that applies database changes using Liquibase.
 
 # Latest version
-2018-08-13  version 1.0.1
+2021-02-13  version 1.0.3
 
 # Instructions for use:
 ### Step 1: Include the plugin in your build
