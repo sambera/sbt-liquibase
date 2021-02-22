@@ -4,6 +4,7 @@ Plugin that applies database changes using Liquibase.
 
 # Latest version
 2018-08-13  version 1.0.0
+2021-02-22  version 1.0.1
 
 # Instructions for use:
 ### Step 1: Include the plugin in your build

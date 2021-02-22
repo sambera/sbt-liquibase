@@ -14,9 +14,9 @@ lazy val `sbt-liquibase` = (project in file("."))
     publishMavenStyle := true,
     publishTo := Some(Resolver.file("sambera.se", new File(Path.userHome.absolutePath + "/repo/sambera-releases/releases"))),
     libraryDependencies ++= Seq(
-      "org.liquibase" % "liquibase-core" % "3.6.2",
+      "org.liquibase" % "liquibase-core" % "3.6.3",
       "ch.qos.logback" % "logback-classic" % "1.2.3"
     ),
-    crossScalaVersions := Seq("2.10.7", "2.12.6"),
-    crossSbtVersions := Vector("0.13.17", "1.1.6")
+    crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.12"),
+    crossSbtVersions := Vector("0.13.18", "1.1.6", "1.2.8", "1.3.13", "1.4.7")
   )
