@@ -9,7 +9,7 @@ lazy val `sbt-liquibase` = (project in file("."))
     homepage := Some(url("https://github.com/sambera/sbt-liquibase"))
   )),
     name := "sbt-liquibase",
-    version := "1.0.2", // WARNING: Manual release handling
+    version := "1.0.3", // WARNING: Manual release handling
     publishArtifact in Test := false,
     publishMavenStyle := true,
     publishTo := Some(Resolver.file("sambera.se", new File(Path.userHome.absolutePath + "/repo/sambera-releases/releases"))),
@@ -17,6 +17,6 @@ lazy val `sbt-liquibase` = (project in file("."))
       "org.liquibase" % "liquibase-core" % "3.6.3",
       "ch.qos.logback" % "logback-classic" % "1.2.3"
     ),
-    crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.12"),
-    crossSbtVersions := Vector("0.13.18", "1.1.6", "1.2.8", "1.3.13", "1.4.7")
+    crossScalaVersions := Seq("2.10.7", "2.12.12"),
+    crossSbtVersions := Vector("0.13.18", "1.4.7")
   )

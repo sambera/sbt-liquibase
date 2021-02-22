@@ -7,10 +7,10 @@ val h2Driver = "org.h2.Driver"
 lazy val test = (project in file("."))
   .enablePlugins(LiquibasePlugin)
   .settings(
-    scalaVersion := "2.12.6",
+    scalaVersion := "2.12.12",
     name := "sbt-liquibase-test-validate",
     organization := "se.sambera",
-    version := "0.1.0",
+    version := "1.0.1",
 
     libraryDependencies += "com.h2database" % "h2" % "1.4.197",
 
