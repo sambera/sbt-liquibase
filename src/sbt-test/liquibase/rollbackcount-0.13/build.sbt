@@ -38,7 +38,7 @@ def checkContainsTables(expectedTables: Seq[String], target: String): Unit = {
 scalaVersion := "2.12.12"
 name := "sbt-liquibase-test-rollbackcount"
 organization := "se.sambera"
-version := "1.0.1"
+version := "1.0.3"
 
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"
 

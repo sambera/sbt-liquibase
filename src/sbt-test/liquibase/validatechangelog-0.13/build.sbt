@@ -7,7 +7,7 @@ val h2Driver = "org.h2.Driver"
 scalaVersion := "2.12.12"
 name := "sbt-liquibase-test-validate"
 organization := "se.sambera"
-version := "1.0.1"
+version := "1.0.3"
 
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"
 

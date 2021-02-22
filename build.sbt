@@ -1,4 +1,4 @@
-import sbt.Keys.{crossSbtVersions, homepage}
+
 
 lazy val `sbt-liquibase` = (project in file("."))
   .settings(inThisBuild(List(
@@ -9,14 +9,14 @@ lazy val `sbt-liquibase` = (project in file("."))
     homepage := Some(url("https://github.com/sambera/sbt-liquibase"))
   )),
     name := "sbt-liquibase",
-    version := "1.0.4-SNAPSHOT", // WARNING: Manual release handling
+    version := "1.0.4", // WARNING: Manual release handling
     publishArtifact in Test := false,
     publishMavenStyle := true,
     publishTo := Some(Resolver.file("sambera.se", new File(Path.userHome.absolutePath + "/repo/sambera-releases/releases"))),
     libraryDependencies ++= Seq(
-      "org.liquibase" % "liquibase-core" % "3.6.3",
+      "org.liquibase" % "liquibase-core" % "3.7.0",
       "ch.qos.logback" % "logback-classic" % "1.2.3"
     ),
     crossScalaVersions := Seq("2.10.7", "2.12.12"),
-    crossSbtVersions := Vector("0.13.18", "1.4.7")
+    crossSbtVersions := Vector("0.13.18", "1.1.6")
   )

@@ -1,4 +1,4 @@
-Liquibase plugin for sbt 1.1.5
+Liquibase plugin for sbt 1.x
 ====================================
 Plugin that applies database changes using Liquibase.
 
@@ -19,9 +19,9 @@ Add the following to your `project/plugins.sbt`:
 ### Step 2: Activate sbt-liquibase in your build
 
 Add the following to your `build.sbt` (if using SBT)
-    
+
     import se.sambera.LiquibasePlugin
-    
+
     lazy val test = (project in file("."))
       .enablePlugins(LiquibasePlugin)
       .settings(
@@ -30,7 +30,7 @@ Add the following to your `build.sbt` (if using SBT)
          liquibaseDriver    := "<database_driver>",
          liquibaseUrl       := "<database_url>",
          liquibaseChangelog := "<changelog_pathname_file>",
-         
+
          // rest of your setting configuration
          )
 
@@ -63,7 +63,7 @@ Add the following to your `build.sbt` (if using SBT)
 # Developer guide
 
 ## Run tests
-The tests are written with sbt-scripted. In order to run them, run `sbt ^ scripted`.
+  The tests are written with sbt-scripted. In order to run them, run `sbt ^ scripted`.
 
 ## Release
 The releases are stored in a separate GitHub repository called [releases](https://github.com/sambera/releases). Hence we will call the current repository for plugin repository.
@@ -79,7 +79,7 @@ The releases are stored in a separate GitHub repository called [releases](https:
 - `sbt ^ publish` (The ceiling is due to cross compiling for SBT 0.13.+ and 1.+)
 - `git push`
 
-### Publish jar-files from release repository to GitHub 
+### Publish jar-files from release repository to GitHub
 - `cd ~/repo/sambera-releases/`
 - `git commit`
 - `git push`
@@ -96,4 +96,3 @@ Acknowledgements
 I used the following plugins as reference:
  * [bigtoast/sbt-liquibase](https://github.com/bigtoast/sbt-liquibase)
  * [sbtliquibase/sbt-liquibase-plugin](https://github.com/sbtliquibase/sbt-liquibase-plugin)
-
