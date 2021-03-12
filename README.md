@@ -3,7 +3,7 @@ Liquibase plugin for sbt 1.x
 Plugin that applies database changes using Liquibase.
 
 # Latest version
-2021-02-13  version 1.0.3
+2021-03-12  version 1.0.6
 
 # Instructions for use:
 ### Step 1: Include the plugin in your build
@@ -14,7 +14,7 @@ Add the following to your `project/plugins.sbt`:
     resolvers += "sambera-github" at "https://raw.githubusercontent.com/sambera/releases/master/"
 
     // Enable liquibase updates
-    addSbtPlugin("se.sambera" % "sbt-liquibase" % "1.0.1")
+    addSbtPlugin("se.sambera" % "sbt-liquibase" % "1.0.6")
 
 ### Step 2: Activate sbt-liquibase in your build
 
