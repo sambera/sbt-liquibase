@@ -11,7 +11,7 @@ lazy val test = (project in file("."))
     scalaVersion := "2.12.12",
     name := "sbt-liquibase-test-dropall",
     organization := "se.sambera",
-    version := "1.0.3",
+    version := "1.0.5",
 
     libraryDependencies += "com.h2database" % "h2" % "1.4.197",
 

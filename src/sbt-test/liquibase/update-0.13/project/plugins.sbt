@@ -5,6 +5,6 @@ sys.props.get("plugin.version") match {
 }
 
 val h2database    = "com.h2database" % "h2" % "1.4.197"
-val liquibaseCore = "org.liquibase" % "liquibase-core" % "3.6.1"
+val liquibaseCore = "org.liquibase" % "liquibase-core" % "3.10.3"
 
 libraryDependencies ++= Seq(h2database, liquibaseCore)
