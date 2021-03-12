@@ -9,7 +9,7 @@ lazy val `sbt-liquibase` = (project in file("."))
     homepage := Some(url("https://github.com/sambera/sbt-liquibase"))
   )),
     name := "sbt-liquibase",
-    version := "1.0.5", // WARNING: Manual release handling
+    version := "1.0.6-SNAPSHOT", // WARNING: Manual release handling
     publishArtifact in Test := false,
     publishMavenStyle := true,
     publishTo := Some(Resolver.file("sambera.se", new File(Path.userHome.absolutePath + "/repo/sambera-releases/releases"))),
